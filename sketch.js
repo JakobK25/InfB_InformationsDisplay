@@ -3,7 +3,6 @@ function setup() {
     createCanvas(1920, 1080);
 
     mgr = new SceneManager();
-    // Preload scenes. Preloading is normally optional
     mgr.addScene(dashboard);
     mgr.showScene(dashboard);
   }
