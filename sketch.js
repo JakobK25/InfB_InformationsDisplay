@@ -1,6 +1,6 @@
 let ats_logo;
 let tickerText = "EU DEBAT: 9. JUNI  -  VINTERUDSTILLING: 25. JULI  -  FODBOLDTRØJE FREDAG: 7. JUNI";
-let xPos = 0;
+let xPos = 1080;
 let speed = 1.7;
 
 function preload() {
@@ -52,11 +52,11 @@ function renderTicker() {
   text(tickerText, xPos, 195);
 
   // Move ticker text
-  xPos += speed;
+  xPos -= speed;
 
   // Check for reset condition
-  if (xPos > width - textWidth(tickerText)) {
-    xPos = -textWidth(tickerText);
+  if (xPos <= -textWidth(tickerText)) {
+    xPos = width;
   }
 }
 
