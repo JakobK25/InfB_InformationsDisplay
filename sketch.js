@@ -1,5 +1,5 @@
 let ats_logo;
-let tickerText = "DETTE ER EN TEST";
+let tickerText = "EU DEBAT: 9. JUNI  -  VINTERUDSTILLING: 25. JULI  -  FODBOLDTRØJE FREDAG: 7. JUNI";
 let xPos = 0;
 let speed = 1.7;
 
@@ -27,42 +27,43 @@ function setup() {
 }
 
 function draw() {
-  clear()
+createCanvas(1920, 200)
+
   mgr.draw();
   background(169, 169, 169);
 
   image(ats_logo, 20, 20, 120, 120);
-  textSize(100)
+  textSize(100);
+
+  fill(83, 83, 83); // RGB color for grey
   text("AARHUS TECH", 160, 130);
 
   renderTicker();
-
-  let c1 = color('#EA2C31');
-  fill(c1);
-  rect(1920, 80, 120, 0);
 }
 
 function renderTicker() {
   textSize(50);
 
-  // Render ticker text
-  fill(83, 83, 83);
-  text(tickerText, xPos, 190);
+  fill(234, 44, 49); // RGB color for red
+  rect(0, 150, width, 50); // Adjust the position and size as needed
 
-  
+  // Render ticker text
+  fill(255, 255, 255); // RGB color for white
+  text(tickerText, xPos, 195);
 
   // Move ticker text
   xPos += speed;
 
   // Check for reset condition
-  if (xPos > width) {
+  if (xPos > width - textWidth(tickerText)) {
     xPos = -textWidth(tickerText);
   }
 }
 
 function dashboard() {
   this.enter = function() {
-    createCanvas(1920, 200);
+    fill(83, 83, 83)
+    rect(0, 200, 1920, 1080)
     background(169, 169, 169);
     console.log("dashboard");
   }
