@@ -1,17 +1,14 @@
-let content = 'This is a test of the ticker ';
-let x = 0;
-let xSpeed = 5; // Speed of the ticker
-
 function setup() {
   createCanvas(1920, 1080);
   background('red');
 
   mgr = new SceneManager();
   mgr.addScene(dashboard);
+  mgr.addScene(booker);
+  mgr.addScene(kantine);
+
   mgr.showScene(dashboard);
 
-  // Initialize x to be the canvas width so it starts off the right side of the screen
-  x = width;
 }
 
 function draw() {
