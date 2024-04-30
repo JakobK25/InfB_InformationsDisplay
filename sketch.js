@@ -87,9 +87,9 @@ function kantine() {
     let displayCurrentWeek = true;
     
     
-      calculateNextWeek(); // Calculate next week menus automatically
+      calculateNextWeek();
     
-      updateMenus(); // Display menus
+      updateMenus();
     }
     
     function calculateNextWeek() {
@@ -117,8 +117,8 @@ function kantine() {
       displayWeekMenus(currentWeekMenus, 500, 100); 
       
       fill(83, 83 , 83);
-      rect(920, 320, 200, 50, 10); // Adjusted position
-      fill(255); // Black color for text
+      rect(920, 320, 200, 50, 10); 
+      fill(255); 
       text("Uge " + (currentWeekNumber + 1), 1020, 345);
       
       displayWeekMenus(nextWeekMenus, 500, 400); 
