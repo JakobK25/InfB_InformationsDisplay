@@ -12,7 +12,8 @@ function setup() {
   createCanvas(1920, 200);
   mgr = new SceneManager();
   mgr.addScene(dashboard);
-  mgr.addScene(booker);
+  mgr.addScene(book);
+  mgr.addScene(afbook);
   mgr.addScene(kantine);
   mgr.showScene(dashboard);
   frameRate(60); // Adjust frame rate to manage drawing speed
@@ -57,7 +58,15 @@ function dashboard() {
   }
 }
 
-function booker() {
+function book() {
+  this.enter = function() {
+    createCanvas(1920, 1080);
+    background(169, 169, 169);
+    console.log("booker");
+  }
+}
+
+function afbook() {
   this.enter = function() {
     createCanvas(1920, 1080);
     background(169, 169, 169);
