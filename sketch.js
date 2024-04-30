@@ -1,6 +1,13 @@
+let ats_logo
+
+function preload() {
+  images = [
+    loadImage('img/ats_logo.png'),
+  ];
+}
+
 function setup() {
   createCanvas(1920, 1080);
-  background('red');
 
   mgr = new SceneManager();
   mgr.addScene(dashboard);
@@ -16,6 +23,11 @@ function draw() {
 }
 
 function dashboard() {
-  background('red'); // Clear the canvas for the new frame
-  ticker(); // Call the ticker function to draw and move the text
+  this.enter = function() {
+    createCanvas(1920, 1080);
+    background(A9A9A9);
+
+    image(ats_logo, 0, 0, 200, 200);
+    
+  }
 }
