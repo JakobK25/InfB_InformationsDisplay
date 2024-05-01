@@ -87,6 +87,14 @@ function dashboard() {
     debook_btn.position(25, 1000);
     frokost_btn.position(1640, 1000);
 
+    book_btn.size(240, 60);
+    debook_btn.size(240, 60);
+    frokost_btn.size(240, 60);
+    
+    book_btn.style('background-color','#B3EE55');
+    debook_btn.style('background-color','#EA2C31');
+    frokost_btn.style('background-color','#B3EE55');
+
     book_btn.mousePressed(function () {
       mgr.showScene(booker);
     });
