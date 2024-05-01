@@ -27,17 +27,20 @@ function draw() {
   clear()
   mgr.draw();
   
-  background(169, 169, 169);
+  background(255, 255, 255);
 
-  image(ats_logo, 20, 20, 120, 120);
+  fill(169, 169, 169);
+  rect(0, 0, 1920, 120);
+
+  image(ats_logo, 5, 0, 120, 120);
   textSize(100);
   fill(85, 85, 85); // Set fill color to davy grey
-  text("AARHUS TECH", 160, 130);
+  text("AARHUS TECH", 140, 100);
 
   // Display current time
   textSize(100);
-  fill(0, 0, 0); // Set fill color to black
-  text(currentTime(), 1600, 125); // Adjust position as needed
+  fill(85, 85, 85); // Set fill color to davy grey
+  text(currentTime(), 1600, 100); // Adjust position as needed
 
   renderTicker();
 }
@@ -47,12 +50,12 @@ function renderTicker() {
   fill(83, 83, 83);
 
   // Draw a red rectangle behind the ticker text
-  fill(234, 49, 43); // Set fill color to red
-  rect(0, 150, width, 80); // Adjust the position and size as needed
+  fill(234, 44, 49); // Set fill color to red
+  rect(0, 120, 1920, 80); // Adjust the position and size as needed
 
   // Render ticker text
   fill(255, 255, 255); // Set fill color to white
-  text(tickerText, xPos, 190); // Removed height parameter
+  text(tickerText, xPos, 180); // Removed height parameter
 
   // Move ticker text
   xPos -= speed;
@@ -78,7 +81,7 @@ function dashboard() {
   this.enter = function () {
     console.log("hello")
     createCanvas(1920, 1080);
-    background(169, 169, 169);
+    background(255, 255, 255);
 
     let book_btn = createButton('Book Lokale');
     let debook_btn = createButton('Afbook Lokale');
@@ -115,7 +118,7 @@ function dashboard() {
 
 function debook() {
   function setup() {
-    createCanvas(1920, 880);
+    createCanvas(1920, 1080);
     background(169, 169, 169);
     
     BoxOptaget(20, 10);
@@ -167,7 +170,7 @@ function debook() {
 function booker() {
   this.enter = function () {
     console.log("booker");
-    createCanvas(1920, 880);
+    createCanvas(1920, 1080);
     background(169, 169, 169);
 
     BoxLedig(20, 10);
@@ -220,7 +223,7 @@ function booker() {
 
 function kantine() {
   this.enter = function () {
-    createCanvas(1920, 880);
+    createCanvas(1920, 1080);
     textSize(24);
     textAlign(CENTER, CENTER);
 
