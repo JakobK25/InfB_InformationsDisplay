@@ -16,6 +16,7 @@ function setup() {
   mgr.addScene(dashboard);
   mgr.addScene(booker);
   mgr.addScene(kantine);
+  mgr.addScene(debook);
   mgr.showScene(dashboard);
   frameRate(60); // Adjust frame rate to manage drawing speed
   console.log("setup done");
@@ -92,18 +93,19 @@ function dashboard() {
     });
 
     debook_btn.mousePressed(function () {
-      mgr.showScene(booker);
+      mgr.showScene(afbook);
     });
 
     frokost_btn.mousePressed(function () {
       mgr.showScene(kantine);
+
     });
     
     console.log("dashboard");
   }
 }
 
-function afbook() {
+function debook() {
   function setup() {
     createCanvas(1920, 880);
     background(169, 169, 169);
