@@ -1,5 +1,5 @@
 let ats_logo;
-let tickerText = "TEST - TEST - TEST - TEST - TEST";
+let tickerText = "DETTE ER EN TEST - DETTE ER EN TEST - DETTE ER EN TEST - DETTE ER EN TEST";
 let xPos = 0;
 let speed = 1.7;
 
@@ -25,7 +25,8 @@ function draw() {
   background(169, 169, 169);
 
   image(ats_logo, 20, 20, 120, 120);
-  textSize(100)
+  textSize(100);
+  fill(85, 85, 85); // Set fill color to davy grey
   text("AARHUS TECH", 160, 130);
 
   renderTicker();
@@ -33,21 +34,19 @@ function draw() {
 
 function renderTicker() {
   textSize(50);
-  fill(83, 83, 83);
 
-  rect()
+  // Draw a red rectangle behind the ticker text
+  fill(234, 49, 43); // Set fill color to red
+  rect(0, 150, width, 80); // Adjust the position and size as needed
 
   // Render ticker text
-  text(tickerText, xPos, 190, height);
+  fill(255, 255, 255); // Set fill color to white
+  text(tickerText, xPos, 190); // Removed height parameter
 
   // Move ticker text
   xPos += speed;
-
-  // Check for reset condition
-  if (xPos > width) {
-    xPos = -textWidth(tickerText);
-  }
 }
+
 
 function dashboard() {
   this.enter = function() {
