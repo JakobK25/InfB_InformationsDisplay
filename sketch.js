@@ -19,6 +19,8 @@ function setup() {
   mgr.showScene(dashboard);
   frameRate(60); // Adjust frame rate to manage drawing speed
   console.log("setup done");
+
+
 }
 
 function draw() {
@@ -30,6 +32,11 @@ function draw() {
   textSize(100);
   fill(85, 85, 85); // Set fill color to davy grey
   text("AARHUS TECH", 160, 130);
+
+  // Display current time
+  textSize(100);
+  fill(0, 0, 0); // Set fill color to black
+  text(currentTime(), 1600, 125); // Adjust position as needed
 
   renderTicker();
 }
@@ -50,9 +57,19 @@ function renderTicker() {
   xPos -= speed;
 
   // Check for reset condition
-  if (xPos > width) {
-    xPos = -textWidth(tickerText);
+  if (xPos < -textWidth(tickerText)) { // Changed condition
+    xPos = width;
   }
+}
+
+function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+
+  mm = String(mm).padStart(2, '0');
+
+  return hh + ":" + mm;
 }
 
 function dashboard() {
@@ -60,16 +77,63 @@ function dashboard() {
     createCanvas(1920, 200);
     background(169, 169, 169);
     console.log("dashboard");
+    }
   }
-}
+
 
 function booker() {
   this.enter = function () {
-    createCanvas(1920, 1080);
-    background(169, 169, 169);
     console.log("booker");
+    createCanvas(1920, 880);
+    background(169, 169, 169);
+    
+    BoxLedig(20, 10);
+    BoxLedig(20, 90);
+    BoxLedig(20, 170);
+    BoxLedig(20, 250);
+    BoxLedig(20, 330);
+    BoxLedig(20, 410);
+    BoxLedig(20, 490);
+    BoxLedig(20, 570);
+    BoxLedig(20, 650);
+    BoxLedig(20, 730);
+    BoxLedig(20, 810);
+    
+    BoxLokale(200, 10, "Lokale SH117")
+    BoxLokale(200, 90, "Lokale SH118")
+    BoxLokale(200, 170, "Lokale SH208")
+    BoxLokale(200, 250, "Lokale SH211")
+    BoxLokale(200, 330, "Lokale SH213")
+    BoxLokale(200, 410, "Lokale SH219")
+    BoxLokale(200, 490, "Lokale SH220")
+    
   }
-}
+  
+  function BoxLedig(x, y) {
+    // Draw the box
+    fill(179, 238, 85);
+    rect(x, y, 160, 60, 10);
+    
+    // Draw the text
+    fill(255);
+    textSize(35);
+    text("Ledig", x + 35, y + 40);
+  }
+    
+  function BoxLokale(x, y, Lokale) {
+    // Draw the box
+    fill(241, 242, 125);
+    rect(x, y, 250, 60, 10);
+    
+    // Draw the text
+    fill(0);
+    textSize(35);
+    text(Lokale, x + 20, y + 40);
+    
+  }
+  
+  }
+
 
 function kantine() {
   this.enter = function() {
