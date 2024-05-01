@@ -101,7 +101,7 @@ function dashboard() {
     });
 
     debook_btn.mousePressed(function () {
-      mgr.showScene(afbook);
+      mgr.showScene(debook);
     });
 
     frokost_btn.mousePressed(function () {
@@ -114,7 +114,6 @@ function dashboard() {
 }
 
 function debook() {
-  function setup() {
     createCanvas(1920, 880);
     background(169, 169, 169);
     
@@ -162,7 +161,6 @@ function debook() {
     text(Lokale, x + 20, y + 40);
     
   }  
-}
 
 function booker() {
   this.enter = function () {
