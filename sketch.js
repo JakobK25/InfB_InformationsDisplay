@@ -31,6 +31,11 @@ function draw() {
   fill(85, 85, 85); // Set fill color to davy grey
   text("AARHUS TECH", 160, 130);
 
+  // Display current time
+  textSize(100);
+  fill(0, 0, 0); // Set fill color to black
+  text(currentTime(), 1600, 125); // Adjust position as needed
+
   renderTicker();
 }
 
@@ -59,22 +64,9 @@ function currentTime() {
   let date = new Date(); 
   let hh = date.getHours();
   let mm = date.getMinutes();
-  let ss = date.getSeconds();
-  let session = "AM";
 
-    
-  if(hh > 12){
-      session = "PM";
-   }
-
-   hh = (hh < 10) ? "0" + hh : hh;
-   mm = (mm < 10) ? "0" + mm : mm;
-   ss = (ss < 10) ? "0" + ss : ss;
-    
-   let time = hh + ":" + mm + ":" + ss + " " + session;
-
-  document.getElementById("clock").innerText = time; 
-  var t = setTimeout(function(){ currentTime() }, 1000); 
+  // Return time as a string
+  return hh + ":" + mm;
 }
 
 function dashboard() {
