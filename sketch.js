@@ -66,6 +66,8 @@ function renderTicker() {
   }
 }
 
+
+
 function currentTime() {
   let date = new Date();
   let hh = date.getHours();
@@ -83,42 +85,54 @@ function dashboard() {
     createCanvas(1920, 1080);
     background(255, 255, 255);
 
-    let book_btn = createButton('Book Lokale');
-    let debook_btn = createButton('Afbook Lokale');
-    let frokost_btn = createButton('Frokost Menu');
-
-    book_btn.position(275, 1000);
-    debook_btn.position(25, 1000);
-    frokost_btn.position(1640, 1000);
-
-    book_btn.size(240, 60);
-    debook_btn.size(240, 60);
-    frokost_btn.size(240, 60);
+    let book_btn,  debook_btn, frokost_btn
     
+    book_btn = createButton('Book Lokale');
+    book_btn.position(275, 1000);
+    book_btn.size(240, 60);
     book_btn.style('background-color','#B3EE55');
-    debook_btn.style('background-color','#EA2C31');
-    frokost_btn.style('background-color','#B3EE55');
-
-    fill(169, 169, 169);
-    rect(10,220,890,760);
-
-    fill(169, 169, 169);
-    rect(920,220,990,760);
-
+    book_btn.style('color','black');
+    book_btn.style('border-radius','10px');
     book_btn.mousePressed(function () {
       mgr.showScene(booker);
+      hideButtons();
     });
 
+    debook_btn = createButton('Afbook Lokale');
+    debook_btn.position(25, 1000);
+    debook_btn.size(240, 60);
+    debook_btn.style('background-color','#EA2C31');
+    debook_btn.style('color','black');
+    debook_btn.style('border-radius','10px');
     debook_btn.mousePressed(function () {
       mgr.showScene(debook);
+      hideButtons();
     });
 
+    frokost_btn = createButton('Frokost Menu');
+    frokost_btn.position(1650, 1000);
+    frokost_btn.size(240, 60);
+    frokost_btn.style('background-color','#B3EE55');
+    frokost_btn.style('color','black');
+    frokost_btn.style('border-radius','10px');
     frokost_btn.mousePressed(function () {
       mgr.showScene(kantine);
-
+      hideButtons();
     });
+
+    function hideButtons() {
+      book_btn.hide();
+      debook_btn.hide();
+      frokost_btn.hide();
+    }
     
     console.log("dashboard");
+  }
+  
+  function draw () {
+    fill(169, 169, 169);
+    rect(10, 220, 890, 760);
+    rect(920, 220, 990, 760);
   }
 }
 
@@ -127,7 +141,22 @@ function debook() {
     console.log("debook");
     createCanvas(1920, 1080);
     background(169, 169, 169);
-    
+    let back_btn;
+
+    back_btn = createButton('Tilbage');
+    back_btn.position(1650, 1000);
+    back_btn.size(240, 60);
+    back_btn.style('background-color','#EA2C31');
+    back_btn.style('color','black');
+    back_btn.style('border-radius','10px');
+    back_btn.mousePressed(function () {
+      mgr.showScene(dashboard);
+      hideButtons();
+    });
+
+    function hideButtons() {
+      back_btn.hide();
+    }
     BoxOptaget(20, 10);
     BoxOptaget(20, 90);
     BoxOptaget(20, 170);
@@ -179,6 +208,23 @@ function booker() {
     console.log("booker");
     createCanvas(1920, 1080);
     background(169, 169, 169);
+
+    let back_btn;
+
+    back_btn = createButton('Tilbage');
+    back_btn.position(1650, 1000);
+    back_btn.size(240, 60);
+    back_btn.style('background-color','#EA2C31');
+    back_btn.style('color','black');
+    back_btn.style('border-radius','10px');
+    back_btn.mousePressed(function () {
+      mgr.showScene(dashboard);
+      hideButtons();
+    });
+
+    function hideButtons() {
+      back_btn.hide();
+    }
 
     BoxLedig(20, 10);
     BoxLedig(20, 90);
@@ -232,8 +278,26 @@ function kantine() {
   this.enter = function () {
     console.log("katine");
     createCanvas(1920, 1080);
-    textSize(24);
-    textAlign(CENTER, CENTER);
+
+    let back_btn;
+
+    back_btn = createButton('Tilbage');
+    back_btn.position(1650, 1000);
+    back_btn.size(240, 60);
+    back_btn.style('background-color','#EA2C31');
+    back_btn.style('color','black');
+    back_btn.style('border-radius','10px');
+    back_btn.mousePressed(function () {
+      mgr.showScene(dashboard);
+      hideButtons();
+    });
+
+    function hideButtons() {
+      back_btn.hide();
+    }
+
+    fill(169, 169, 169)
+    rect(30, 240, 1900, 760)
 
     let currentWeekMenus = [
       "Svensk pølseret",
