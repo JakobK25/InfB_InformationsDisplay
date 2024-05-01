@@ -2,9 +2,11 @@ let ats_logo;
 let tickerText = "DETTE ER EN TEST - DETTE ER EN TEST - DETTE ER EN TEST - DETTE ER EN TEST";
 let xPos = 0;
 let speed = 1.7;
+let Skoleplan;
 
 function preload() {
   ats_logo = loadImage("img/ats_logo.png");
+  Skoleplan = loadImage("img/plan.png")
   console.log("preload done");
 }
 
