@@ -103,6 +103,56 @@ function dashboard() {
   }
 }
 
+function afbook() {
+  function setup() {
+    createCanvas(1920, 880);
+    background(169, 169, 169);
+    
+    BoxOptaget(20, 10);
+    BoxOptaget(20, 90);
+    BoxOptaget(20, 170);
+    BoxOptaget(20, 250);
+    BoxOptaget(20, 330);
+    BoxOptaget(20, 410);
+    BoxOptaget(20, 490);
+    BoxOptaget(20, 570);
+    BoxOptaget(20, 650);
+    BoxOptaget(20, 730);
+    BoxOptaget(20, 810);
+    
+    BooketLokale(200, 10, "Lokale SH117")
+    BooketLokale(200, 90, "Lokale SH118")
+    BooketLokale(200, 170, "Lokale SH208")
+    BooketLokale(200, 250, "Lokale SH211")
+    BooketLokale(200, 330, "Lokale SH213")
+    BooketLokale(200, 410, "Lokale SH219")
+    BooketLokale(200, 490, "Lokale SH220")
+    
+  }
+  
+  function BoxOptaget(x, y) {
+    // Draw the box
+    fill(234, 44, 49);
+    rect(x, y, 160, 60, 10);
+    
+    // Draw the text
+    fill(255);
+    textSize(35);
+    text("Optaget", x + 15, y + 40);
+  }
+    
+  function BooketLokale(x, y, Lokale) {
+    // Draw the box
+    fill(241, 242, 125);
+    rect(x, y, 250, 60, 10);
+    
+    // Draw the text
+    fill(0);
+    textSize(35);
+    text(Lokale, x + 20, y + 40);
+    
+  }  
+}
 
 function booker() {
   this.enter = function () {
