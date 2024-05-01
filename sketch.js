@@ -50,8 +50,8 @@ function renderTicker() {
   xPos -= speed;
 
   // Check for reset condition
-  if (xPos > width) {
-    xPos = -textWidth(tickerText);
+  if (xPos < -textWidth(tickerText)) { // Changed condition
+    xPos = width;
   }
 }
 
