@@ -1,5 +1,5 @@
 let ats_logo;
-let tickerText = "DETTE ER EN TEST - DETTE ER EN TEST - DETTE ER EN TEST - DETTE ER EN TEST";
+let tickerText = "Husk Fodboldtrøjefredag på fredag! - Brug din stemme. EU-VALGET 9. Juni 2024 - Elever er med i Korners kunstkonkurrence 2024";
 let xPos = 0;
 let speed = 1.7;
 let Skoleplan;
