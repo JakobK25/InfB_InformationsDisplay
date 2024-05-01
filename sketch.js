@@ -88,16 +88,16 @@ function dashboard() {
     let frokost_btn = createButton('Frokost Menu');
 
     book_btn.position(275, 1000);
-    debook_btn.position(25, 1000);
-    frokost_btn.position(1640, 1000);
-
-    book_btn.size(240, 60);
-    debook_btn.size(240, 60);
-    frokost_btn.size(240, 60);
-    
     book_btn.style('background-color','#B3EE55');
+    book_btn.size(240, 60);
+
+    debook_btn.position(25, 1000);
     debook_btn.style('background-color','#EA2C31');
+    debook_btn.size(240, 60);
+
+    frokost_btn.position(1640, 1000);
     frokost_btn.style('background-color','#B3EE55');
+    frokost_btn.size(240, 60);
 
     fill(169, 169, 169);
     rect(10,220,890,760);
