@@ -47,7 +47,7 @@ function renderTicker() {
   text(tickerText, xPos, 190); // Removed height parameter
 
   // Move ticker text
-  xPos += speed;
+  xPos -= speed;
 
   // Check for reset condition
   if (xPos > width) {
