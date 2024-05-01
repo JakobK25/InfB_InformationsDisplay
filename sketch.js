@@ -99,6 +99,12 @@ function dashboard() {
     debook_btn.style('background-color','#EA2C31');
     frokost_btn.style('background-color','#B3EE55');
 
+    fill(169, 169, 169);
+    rect(10,220,890,760);
+
+    fill(169, 169, 169);
+    rect(920,220,990,760);
+
     book_btn.mousePressed(function () {
       mgr.showScene(booker);
     });
