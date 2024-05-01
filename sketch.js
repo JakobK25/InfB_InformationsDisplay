@@ -67,7 +67,8 @@ function currentTime() {
   let hh = date.getHours();
   let mm = date.getMinutes();
 
-  // Return time as a string
+  mm = String(mm).padStart(2, '0');
+
   return hh + ":" + mm;
 }
 
