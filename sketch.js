@@ -117,7 +117,6 @@ function dashboard() {
 }
 
 function debook() {
-  function setup() {
     createCanvas(1920, 1080);
     background(169, 169, 169);
     
@@ -165,7 +164,6 @@ function debook() {
     text(Lokale, x + 20, y + 40);
     
   }  
-}
 function booker() {
   this.enter = function () {
     console.log("booker");
