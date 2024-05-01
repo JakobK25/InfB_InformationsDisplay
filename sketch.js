@@ -104,7 +104,7 @@ function dashboard() {
     });
 
     debook_btn.mousePressed(function () {
-      mgr.showScene(afbook);
+      mgr.showScene(debook);
     });
 
     frokost_btn.mousePressed(function () {
@@ -165,7 +165,6 @@ function debook() {
     text(Lokale, x + 20, y + 40);
     
   }  
-}
 
 function booker() {
   this.enter = function () {
