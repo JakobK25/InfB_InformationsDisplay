@@ -34,6 +34,7 @@ function draw() {
 
 function renderTicker() {
   textSize(50);
+  fill(83, 83, 83);
 
   // Draw a red rectangle behind the ticker text
   fill(234, 49, 43); // Set fill color to red
@@ -45,6 +46,11 @@ function renderTicker() {
 
   // Move ticker text
   xPos += speed;
+
+  // Check for reset condition
+  if (xPos > width) {
+    xPos = -textWidth(tickerText);
+  }
 }
 
 function dashboard() {
@@ -66,29 +72,29 @@ function booker() {
 function kantine() {
   this.enter = function () {
     createCanvas(1900, 760);
-    background(169, 169, 169);
+  background(169, 169, 169);
     console.log("kantine");
-    textSize(20);
-    textAlign(CENTER, CENTER);
+      textSize(20);
+  textAlign(CENTER, CENTER);
 
-    let currentWeekMenus = [
-      "Svensk pølseret",
-      "Burger",
-      "Boller i karry",
-      "Kylling i karry",
-      "Pølsemix"
-    ];
+  let currentWeekMenus = [
+    "Svensk pølseret",
+    "Burger",
+    "Boller i karry",
+    "Kylling i karry",
+    "Pølsemix"
+  ];
 
-    let nextWeekMenus = [];
+  let nextWeekMenus = [];
 
-    let currentWeekNumber;
-    let displayCurrentWeek = true;
+  let currentWeekNumber;
+  let displayCurrentWeek = true;
 
 
-    calculateNextWeek();
+  calculateNextWeek();
 
-    updateMenus();
-  }
+  updateMenus();
+}
 
   function calculateNextWeek() {
     nextWeekMenus = [
@@ -114,7 +120,7 @@ function kantine() {
 
     displayWeekMenus(currentWeekMenus, 500, 100);
 
-    fill(83, 83, 83);
+    fill(83, 83 , 83);
     rect(920, 320, 200, 50, 10);
     fill(255);
     text("Uge " + (currentWeekNumber + 1), 1020, 345);
@@ -161,5 +167,10 @@ function kantine() {
     let millisecsInDay = 86400000;
     return Math.ceil((((date - onejan) / millisecsInDay) + onejan.getDay() + 1) / 7);
   }
-
 }
+
+    
+
+
+  
+
