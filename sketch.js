@@ -19,6 +19,8 @@ function setup() {
   mgr.showScene(dashboard);
   frameRate(60); // Adjust frame rate to manage drawing speed
   console.log("setup done");
+
+
 }
 
 function draw() {
@@ -78,11 +80,18 @@ function currentTime() {
 }
 
 function dashboard() {
-  this.enter = function () {
+  this.enter = function () 
     createCanvas(1920, 200);
     background(169, 169, 169);
     console.log("dashboard");
-  }
+    BookerKnap = createButton("Book lokale");
+    BookerKnap.position(125, 175);
+    BookerKnap.size(100, 30);
+    BookerKnap.style('background-color', '#ECC61A');
+    BookerKnap.mousePressed(function (booker)) {
+      mgr.showScene(booker)
+      HideButtons();
+    }
 }
 
 function booker() {
