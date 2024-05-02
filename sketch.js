@@ -90,6 +90,11 @@ function dashboard() {
     rect(10, 220, 890, 760);
     rect(920, 220, 990, 760);
     
+    image(fodbold, 960, 240, 280, 360);
+    image(eu_valg, 1270, 240, 280, 360);
+    image(film_fest, 1580, 235, 280, 360);
+    image(volleyball, 1040, 610, 280, 360);
+
     let book_btn,  debook_btn, frokost_btn;
     
     book_btn = createButton('Book Lokale');
@@ -271,6 +276,10 @@ function kantine() {
   this.enter = function () {
     console.log("katine");
     createCanvas(1920, 1080);
+    background(255, 255, 255);
+
+    fill(169, 169, 169)
+    rect(10, 220, 1900, 760)
 
     let back_btn;
 
@@ -287,10 +296,7 @@ function kantine() {
 
     function hideButtons() {
       back_btn.hide();
-    }
-
-    fill(169, 169, 169)
-    rect(30, 240, 1900, 760)
+    }  
 
     let currentWeekMenus = [
       "Svensk pølseret",
@@ -323,25 +329,29 @@ function kantine() {
       let today = new Date();
       currentWeekNumber = getWeekNumber(today);
 
-      background(169, 169, 169);
+
 
       fill(83, 83, 83);
-      rect(920, 20, 200, 50, 10);
+      rect(65, 240, 130, 50, 10);
       fill(255);
-      text("Uge " + currentWeekNumber, 1020, 45);
+      textSize(24);
+      textStyle(BOLD);
+      text("Uge " + currentWeekNumber, 85, 270);
 
-      displayWeekMenus(currentWeekMenus, 500, 100);
+      displayWeekMenus(currentWeekMenus, 65, 340);
 
       fill(83, 83, 83);
-      rect(920, 420, 200, 50, 10);
+      rect(65, 600, 130, 50, 10);
       fill(255);
-      text("Uge " + (currentWeekNumber + 1), 1020, 445);
+      textSize(24);
+      textStyle(BOLD);
+      text("Uge " + (currentWeekNumber + 1), 85, 630);
 
-      displayWeekMenus(nextWeekMenus, 500, 500);
+      displayWeekMenus(nextWeekMenus, 65, 700);
     }
 
     function displayWeekMenus(menus, startX, startY) {
-      let spacingX = 225;
+      let spacingX = 354;
       textSize(24);
       fill(255);
 
@@ -353,8 +363,8 @@ function kantine() {
     }
 
     function drawWeekdayBox(x, y, weekday) {
-      let boxWidth = 150;
-      let boxHeight = 50;
+      let boxWidth = 300;
+      let boxHeight = 60;
 
       fill(241, 242, 125);
       rect(x, y, boxWidth, boxHeight, 10);
@@ -362,10 +372,10 @@ function kantine() {
       textStyle(BOLD);
       text(weekday, x + boxWidth / 2, y + boxHeight / 2);
     }
-
+    
     function drawMenuBox(x, y, menuText) {
-      let boxWidth = 150;
-      let boxHeight = 100;
+      let boxWidth = 330;
+      let boxHeight = 60;
 
       fill(83, 83, 83);
       rect(x, y, boxWidth, boxHeight, 10);
