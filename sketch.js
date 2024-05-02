@@ -41,9 +41,13 @@ function draw() {
   text("AARHUS TECH", 140, 100);
 
   // Display current time
-  textSize(100);
+  textSize(75);
   fill(85, 85, 85); // Set fill color to davy grey
-  text(currentTime(), 1600, 100); // Adjust position as needed
+  text(currentTime(), 1400, 100); // Adjust position as needed
+
+  textSize(75);
+  fill(85, 85, 85); // Set fill color to davy grey
+  text(currentDate(), 1650, 100); // Adjust position as needed
 
   renderTicker();
 }
@@ -79,10 +83,24 @@ function currentTime() {
   return hh + ":" + mm;
 }
 
+function currentDate() {
+  let date = new Date(); 
+  let day = date.getDate();
+  let monthIndex = date.getMonth();
+
+  // Array of month names in uppercase
+  let monthNames = ["JAN", "FEB", "MAR", "APR", "MAJ", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC"];
+
+  // Get the month name from the array using the month index
+  let monthName = monthNames[monthIndex];
+
+  // Return date as a string
+  return day + ". " + monthName;
+}
+
 function dashboard() {
 
   this.enter = function () {
-    console.log("hello");
     createCanvas(1920, 1080);
     background(255, 255, 255);
     
