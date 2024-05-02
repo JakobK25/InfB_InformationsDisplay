@@ -34,7 +34,7 @@ function draw() {
 
   fill(169, 169, 169);
   rect(0, 0, 1920, 120);
-  textAlign(LEFT)
+  textAlign(LEFT, BASELINE);
   image(ats_logo, 5, 0, 120, 120);
   textSize(100);
   fill(85, 85, 85); // Set fill color to davy grey
