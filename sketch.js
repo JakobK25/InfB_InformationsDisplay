@@ -11,7 +11,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1920, 200);
+  createCanvas(1920, 1080);
   mgr = new SceneManager();
   mgr.addScene(dashboard);
   mgr.addScene(booker);
@@ -24,10 +24,9 @@ function setup() {
 }
 
 function draw() {
-  clear()
   mgr.draw();
   
-  background(255, 255, 255);
+  //background(255, 255, 255);
 
   fill(169, 169, 169);
   rect(0, 0, 1920, 120);
@@ -66,8 +65,6 @@ function renderTicker() {
   }
 }
 
-
-
 function currentTime() {
   let date = new Date();
   let hh = date.getHours();
@@ -81,11 +78,15 @@ function currentTime() {
 function dashboard() {
 
   this.enter = function () {
-    console.log("hello")
+    console.log("hello");
     createCanvas(1920, 1080);
     background(255, 255, 255);
-
-    let book_btn,  debook_btn, frokost_btn
+    
+    fill(169, 169, 169)
+    rect(10, 220, 890, 760);
+    rect(920, 220, 990, 760);
+    
+    let book_btn,  debook_btn, frokost_btn;
     
     book_btn = createButton('Book Lokale');
     book_btn.position(275, 1000);
@@ -128,12 +129,6 @@ function dashboard() {
     
     console.log("dashboard");
   }
-  
-  function draw () {
-    fill(169, 169, 169);
-    rect(10, 220, 890, 760);
-    rect(920, 220, 990, 760);
-  }
 }
 
 function debook() {
@@ -157,26 +152,22 @@ function debook() {
     function hideButtons() {
       back_btn.hide();
     }
-    BoxOptaget(20, 10);
-    BoxOptaget(20, 90);
-    BoxOptaget(20, 170);
-    BoxOptaget(20, 250);
-    BoxOptaget(20, 330);
-    BoxOptaget(20, 410);
-    BoxOptaget(20, 490);
-    BoxOptaget(20, 570);
-    BoxOptaget(20, 650);
-    BoxOptaget(20, 730);
-    BoxOptaget(20, 810);
+
+    BoxOptaget(30, 240);
+    BoxOptaget(30, 320);
+    BoxOptaget(30, 400);
+    BoxOptaget(30, 480);
+    BoxOptaget(30, 560);
+    BoxOptaget(30, 640);
+    BoxOptaget(30, 720);
     
-    BooketLokale(200, 10, "Lokale SH117")
-    BooketLokale(200, 90, "Lokale SH118")
-    BooketLokale(200, 170, "Lokale SH208")
-    BooketLokale(200, 250, "Lokale SH211")
-    BooketLokale(200, 330, "Lokale SH213")
-    BooketLokale(200, 410, "Lokale SH219")
-    BooketLokale(200, 490, "Lokale SH220")
-    
+    BooketLokale(200, 240, "Lokale SH117")
+    BooketLokale(200, 320, "Lokale SH118")
+    BooketLokale(200, 400, "Lokale SH208")
+    BooketLokale(200, 480, "Lokale SH211")
+    BooketLokale(200, 560, "Lokale SH213")
+    BooketLokale(200, 640, "Lokale SH219")
+    BooketLokale(200, 720, "Lokale SH220")
   }
   
   function BoxOptaget(x, y) {
@@ -226,25 +217,23 @@ function booker() {
       back_btn.hide();
     }
 
-    BoxLedig(20, 10);
-    BoxLedig(20, 90);
-    BoxLedig(20, 170);
-    BoxLedig(20, 250);
-    BoxLedig(20, 330);
-    BoxLedig(20, 410);
-    BoxLedig(20, 490);
-    BoxLedig(20, 570);
-    BoxLedig(20, 650);
-    BoxLedig(20, 730);
-    BoxLedig(20, 810);
+    BoxLedig(30, 240);
+    BoxLedig(30, 320);
+    BoxLedig(30, 400);
+    BoxLedig(30, 480);
+    BoxLedig(30, 560);
+    BoxLedig(30, 640);
+    BoxLedig(30, 720);
+    BoxLedig(30, 800);
 
-    BoxLokale(200, 10, "Lokale SH117")
-    BoxLokale(200, 90, "Lokale SH118")
-    BoxLokale(200, 170, "Lokale SH208")
-    BoxLokale(200, 250, "Lokale SH211")
-    BoxLokale(200, 330, "Lokale SH213")
-    BoxLokale(200, 410, "Lokale SH219")
-    BoxLokale(200, 490, "Lokale SH220")
+    BoxLokale(200, 240, "Lokale SH117")
+    BoxLokale(200, 320, "Lokale SH118")
+    BoxLokale(200, 400, "Lokale SH208")
+    BoxLokale(200, 480, "Lokale SH211")
+    BoxLokale(200, 560, "Lokale SH213")
+    BoxLokale(200, 640, "Lokale SH219")
+    BoxLokale(200, 720, "Lokale SH220")
+    BoxLokale(200, 800, "Lokale SH220")
 
   }
 
