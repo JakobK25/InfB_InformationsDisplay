@@ -7,6 +7,10 @@ let Skoleplan;
 function preload() {
   ats_logo = loadImage("img/ats_logo.png");
   Skoleplan = loadImage("img/plan.png")
+  eu_valg = loadImage("img/eu_valg.jpg")
+  film_fest = loadImage("img/film_fest.jpg")
+  fodbold = loadImage("img/fodbold.jpg")
+  volleyball = loadImage("img/volleyball.jpg")
   console.log("preload done");
 }
 
