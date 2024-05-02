@@ -34,11 +34,12 @@ function draw() {
 
   fill(169, 169, 169);
   rect(0, 0, 1920, 120);
-
+  textAlign(LEFT)
   image(ats_logo, 5, 0, 120, 120);
   textSize(100);
   fill(85, 85, 85); // Set fill color to davy grey
   text("AARHUS TECH", 140, 100);
+
 
   // Display current time
   textSize(100);
@@ -392,7 +393,6 @@ function kantine() {
       fill(0);
       textStyle(BOLD);
       text(weekday, x + boxWidth / 2, y + boxHeight / 2);
-      textAlign(CENTER, CENTER);
     }
     
     function drawMenuBox(x, y, menuText) {
@@ -403,7 +403,6 @@ function kantine() {
       rect(x, y, boxWidth, boxHeight, 10);
       fill(255);
       textStyle(NORMAL);
-      textAlign(CENTER, CENTER);
       text(menuText, x + boxWidth / 2, y + boxHeight / 2);
     }
 
