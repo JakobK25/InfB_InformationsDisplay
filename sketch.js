@@ -90,6 +90,11 @@ function dashboard() {
     rect(10, 220, 890, 760);
     rect(920, 220, 990, 760);
     
+    image(fodbold, 960, 240, 280, 360);
+    image(eu_valg, 1270, 240, 280, 360);
+    image(film_fest, 1580, 235, 280, 360);
+    image(volleyball, 1040, 610, 280, 360);
+
     let book_btn,  debook_btn, frokost_btn;
     
     book_btn = createButton('Book Lokale');
@@ -367,7 +372,7 @@ function kantine() {
       textStyle(BOLD);
       text(weekday, x + boxWidth / 2, y + boxHeight / 2);
     }
-
+    
     function drawMenuBox(x, y, menuText) {
       let boxWidth = 330;
       let boxHeight = 60;
