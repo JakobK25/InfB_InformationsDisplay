@@ -1,8 +1,13 @@
+/* Selects the html and body elements */
 html, body {
-    margin: 0;
-    padding: 0;
-  }
-  canvas {
-    display: block;
-  }
-  
+  /* Removes the margin around the html and body elements */
+  margin: 0;
+  /* Removes the padding inside the html and body elements */
+  padding: 0;
+}
+
+/* Selects the canvas element */
+canvas {
+  /* Makes the canvas element display as a block-level element */
+  display: block;
+}
