@@ -94,6 +94,7 @@ function dashboard() {
     image(eu_valg, 1270, 240, 280, 360);
     image(film_fest, 1580, 235, 280, 360);
     image(volleyball, 1040, 610, 280, 360);
+    image(Skoleplan, 40, 400, 800, 400);
 
     let book_btn,  debook_btn, frokost_btn;
     
@@ -103,6 +104,7 @@ function dashboard() {
     book_btn.style('background-color','#B3EE55');
     book_btn.style('color','black');
     book_btn.style('border-radius','10px');
+    book_btn.style('font-size','24px');
     book_btn.mousePressed(function () {
       mgr.showScene(booker);
       hideButtons();
@@ -114,6 +116,7 @@ function dashboard() {
     debook_btn.style('background-color','#EA2C31');
     debook_btn.style('color','black');
     debook_btn.style('border-radius','10px');
+    debook_btn.style('font-size','24px');
     debook_btn.mousePressed(function () {
       mgr.showScene(debook);
       hideButtons();
@@ -125,6 +128,7 @@ function dashboard() {
     frokost_btn.style('background-color','#B3EE55');
     frokost_btn.style('color','black');
     frokost_btn.style('border-radius','10px');
+    frokost_btn.style('font-size','24px');
     frokost_btn.mousePressed(function () {
       mgr.showScene(kantine);
       hideButtons();
@@ -144,7 +148,12 @@ function debook() {
   this.enter = function () {
     console.log("debook");
     createCanvas(1920, 1080);
-    background(169, 169, 169);
+    background(255, 255, 255);
+    fill(169, 169, 169)
+    rect(10, 220, 1900, 760)
+
+    image(Skoleplan, 600, 240, 1200, 600);
+
     let back_btn;
 
     back_btn = createButton('Tilbage');
@@ -153,6 +162,7 @@ function debook() {
     back_btn.style('background-color','#EA2C31');
     back_btn.style('color','black');
     back_btn.style('border-radius','10px');
+    back_btn.style('font-size','24px');
     back_btn.mousePressed(function () {
       mgr.showScene(dashboard);
       hideButtons();
@@ -176,7 +186,7 @@ function debook() {
     BooketLokale(200, 480, "Lokale SH211")
     BooketLokale(200, 560, "Lokale SH213")
     BooketLokale(200, 640, "Lokale SH219")
-    BooketLokale(200, 720, "Lokale SH220")
+    BooketLokale(200, 720, "Lokale SH221")
   }
   
   function BoxOptaget(x, y) {
@@ -207,16 +217,24 @@ function booker() {
   this.enter = function () {
     console.log("booker");
     createCanvas(1920, 1080);
-    background(169, 169, 169);
+    background(255, 255, 255);
+    fill(169, 169, 169)
+    rect(10, 220, 1900, 760)
 
-    let back_btn;
+    image(Skoleplan, 600, 240, 1200, 600);
 
+    let back_btn, back_btn_text;
+
+   
+  
     back_btn = createButton('Tilbage');
     back_btn.position(1650, 1000);
     back_btn.size(240, 60);
     back_btn.style('background-color','#EA2C31');
     back_btn.style('color','black');
     back_btn.style('border-radius','10px');
+    back_btn.style('font-size','24px');
+    
     back_btn.mousePressed(function () {
       mgr.showScene(dashboard);
       hideButtons();
@@ -242,7 +260,7 @@ function booker() {
     BoxLokale(200, 560, "Lokale SH213")
     BoxLokale(200, 640, "Lokale SH219")
     BoxLokale(200, 720, "Lokale SH220")
-    BoxLokale(200, 800, "Lokale SH220")
+    BoxLokale(200, 800, "Lokale SH222")
 
   }
 
