@@ -289,6 +289,7 @@ function kantine() {
     back_btn.style('background-color','#EA2C31');
     back_btn.style('color','black');
     back_btn.style('border-radius','10px');
+    back_btn.style('font-size', '24px');
     back_btn.mousePressed(function () {
       mgr.showScene(dashboard);
       hideButtons();
@@ -336,7 +337,8 @@ function kantine() {
       fill(255);
       textSize(24);
       textStyle(BOLD);
-      text("Uge " + currentWeekNumber, 85, 270);
+      textAlign(CENTER, CENTER);
+      text("Uge " + currentWeekNumber, 130, 270);
 
       displayWeekMenus(currentWeekMenus, 65, 340);
 
@@ -345,7 +347,8 @@ function kantine() {
       fill(255);
       textSize(24);
       textStyle(BOLD);
-      text("Uge " + (currentWeekNumber + 1), 85, 630);
+      textAlign(CENTER, CENTER);
+      text("Uge " + (currentWeekNumber + 1), 130, 630);
 
       displayWeekMenus(nextWeekMenus, 65, 700);
     }
@@ -371,6 +374,7 @@ function kantine() {
       fill(0);
       textStyle(BOLD);
       text(weekday, x + boxWidth / 2, y + boxHeight / 2);
+      textAlign(CENTER, CENTER);
     }
     
     function drawMenuBox(x, y, menuText) {
@@ -381,6 +385,7 @@ function kantine() {
       rect(x, y, boxWidth, boxHeight, 10);
       fill(255);
       textStyle(NORMAL);
+      textAlign(CENTER, CENTER);
       text(menuText, x + boxWidth / 2, y + boxHeight / 2);
     }
 
